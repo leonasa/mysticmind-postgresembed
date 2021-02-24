@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "MysticMind.PostgresEmbed.Runnable": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    },
+    "WSL 2": {
+      "commandName": "WSL2"
+    }
+  }
+}

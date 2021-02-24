@@ -345,6 +345,47 @@ namespace MysticMind.PostgresEmbed
             return result.ExitCode == 0;
         }
 
+
+        private void StartServerL()
+        {
+            var startInfo = new ProcessStartInfo()
+            {
+                FileName = "apt",
+                Arguments = " -y install postgresql-11",
+                UseShellExecute = false, //Import in Linux environments
+                CreateNoWindow = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true
+            };
+
+            var process = new Process()
+            {
+                StartInfo = startInfo,
+
+            };
+
+            process.OutputDataReceived += (sender, data) => {
+                System.Console.WriteLine(data.Data);
+            };
+
+            process.ErrorDataReceived += (sender, data) => {
+                System.Console.WriteLine(data.Data);
+            };
+
+            try
+            {
+                process.Start();
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
+                process.WaitForExit();
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex);
+            }
+
+        }
+
         private void StartServer()
         {
             var filename = Path.Combine(PgBinDir, PG_CTL_EXE);
@@ -464,40 +505,41 @@ namespace MysticMind.PostgresEmbed
 
         public void Start()
         {
-            // clear working directory based on flag passed
-            if (_clearWorkingDirOnStart)
-            {
-                RemoveWorkingDir();
-            }
+            StartServerL();
+            //// clear working directory based on flag passed
+            //if (_clearWorkingDirOnStart)
+            //{
+            //    RemoveWorkingDir();
+            //}
 
-            if (!Directory.Exists(InstanceDir))
-            {
-                CreateDirs();
+            //if (!Directory.Exists(InstanceDir))
+            //{
+            //    CreateDirs();
 
-                // if the file already exists, download will be skipped
-                DownloadPgBinary();
+            //    // if the file already exists, download will be skipped
+            //    DownloadPgBinary();
 
-                // if the file already exists, download will be skipped
-                DownloadPgExtensions();
+            //    // if the file already exists, download will be skipped
+            //    DownloadPgExtensions();
 
-                ExtractPgBinary();
-                ExtractPgExtensions();
+            //    ExtractPgBinary();
+            //    ExtractPgExtensions();
 
-                if (_addLocalUserAccessPermission)
-                {
-                    AddLocalUserAccessPermission();
-                }
+            //    if (_addLocalUserAccessPermission)
+            //    {
+            //        AddLocalUserAccessPermission();
+            //    }
 
-                InitDb();
-                StartServer();
+            //    InitDb();
+            //    StartServer();
 
-                CreateExtensions();
-            } 
-            else
-            {
-                StartServer();
-            }
-            
+            //    CreateExtensions();
+            //} 
+            //else
+            //{
+            //    StartServer();
+            //}
+
         }
 
         public void Stop()

@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MysticMind.PostgresEmbed.Tests", "MysticMind.PostgresEmbed.Tests\MysticMind.PostgresEmbed.Tests.csproj", "{3D30ABC5-3956-4537-98E0-7DF5B147449C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MysticMind.PostgresEmbed", "MysticMind.PostgresEmbed\MysticMind.PostgresEmbed.csproj", "{261AE1C4-6B77-4999-844C-8F3B9F096F43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MysticMind.PostgresEmbed.Runnable", "MysticMind.PostgresEmbed.Runnable\MysticMind.PostgresEmbed.Runnable.csproj", "{D45021A7-FC63-4118-8C49-23D4D36B30E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3D30ABC5-3956-4537-98E0-7DF5B147449C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D30ABC5-3956-4537-98E0-7DF5B147449C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D30ABC5-3956-4537-98E0-7DF5B147449C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D30ABC5-3956-4537-98E0-7DF5B147449C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{261AE1C4-6B77-4999-844C-8F3B9F096F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{261AE1C4-6B77-4999-844C-8F3B9F096F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{261AE1C4-6B77-4999-844C-8F3B9F096F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{261AE1C4-6B77-4999-844C-8F3B9F096F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D45021A7-FC63-4118-8C49-23D4D36B30E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45021A7-FC63-4118-8C49-23D4D36B30E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45021A7-FC63-4118-8C49-23D4D36B30E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45021A7-FC63-4118-8C49-23D4D36B30E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
